@@ -1,0 +1,5 @@
+src/biosSearch.ps1
+res/models.csv
+chromeDriver/*
+src/output.log
+src/test.ps1
