@@ -1,7 +1,6 @@
 param(
     [string]   $newModels = "$PSScriptRoot\..\res\newModels.csv",
     [string]   $oldModels = "$PSScriptRoot\..\res\oldModels.csv",
-    [string]   $DriverPath = "$PSScriptRoot\..\chromeDriver\chromedriver-win64\",
     [string[]] $Arguments = @( 
         'disable-features=LoadMetricsReporting',
         'disable-features=NetworkService,NetworkServiceInProcess',
@@ -16,6 +15,10 @@ Write-Host "Loaded $($rows.Count) models from $newModels" -ForegroundColor Cyan
 
 # Array to store updated output
 $results = @()
+
+# Web driver location
+$chromeDriver = Get-ChildItem -Path (Split-Path -Path "$PSScriptRoot") | Where-Object { $_.Name -like "*chromeDriver-*" }
+$DriverPath = "$chromeDriver\chromedriver-win64\"
 
 # Launch browser
 Write-Host "Launching headless Chrome..." -ForegroundColor Cyan
