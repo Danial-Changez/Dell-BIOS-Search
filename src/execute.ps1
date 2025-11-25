@@ -108,7 +108,7 @@ $processComputer = {
     
     $headers
     $local = $true
-    $biosCmd = "C:\temp\biosUpdates\$fileName /f /l=`"update.log`" /p=`"biospwd`" /bls"
+    $biosCmd = "C:\temp\biosUpdates\$fileName /f /l=`"update.log`" /p=`"biospassword`" /bls"
     $psCmd = "Invoke-WebRequest ``
     -Uri '$url' ``
     -Method GET ``
