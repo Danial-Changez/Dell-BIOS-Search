@@ -52,3 +52,8 @@ pwsh ./src/execute.ps1 -WSID ./res/WSID.txt -Throttle 10
 - Run on AC power and schedule maintenance windows; BIOS flashes will reboot machines.
 - If Selenium cannot find a BIOS link for a model, verify the `Product` category in the CSV matches the Dell Support URL.
 - Keep ChromeDriver versions in sync with your installed Chrome by re-running `Fetch-ChromeDriver.ps1` when Chrome updates.
+- To redirect noise from Chrome driver, append it to a log file.
+  - Example:
+  ```pwsh
+    .\src\seleniumSearch.ps1 > logData.log
+  ```
